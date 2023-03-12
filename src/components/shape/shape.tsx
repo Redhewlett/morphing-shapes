@@ -1,24 +1,24 @@
 import styled from "styled-components"
 
 const sizes = {
-  extraSmall: { width: "37,5%", height: "25%" },
-  small: { width: "37,5%", height: "50%" },
-  medium: { width: "62,5%", height: "50%" },
+  extraSmall: { width: "25%", height: "25%" },
+  small: { width: "37.5%", height: "50%" },
+  medium: { width: "62.5%", height: "50%" },
   large: { width: "100%", height: "100%" }
 }
 
-const borders = {
-  none: "0px",
-  small: "40px",
-  medium: "100px",
-  large: "100%"
+const index = {
+  extraSmall: 3,
+  small: 2,
+  medium: 1,
+  large: 0
 }
 
 export interface ShapeProps {
   id: string
   color: string
   size: "extraSmall" | "small" | "medium" | "large"
-  radius: "none" | "small" | "medium" | "large"
+  radius: string
   top: string
   left: string
 }
@@ -26,15 +26,19 @@ export interface ShapeProps {
 const Square = styled.div`
   background-color: ${(props) => props.color};
   position: absolute;
+  transition: top, left, border-radius;
+  transition-duration: 750ms;
+  transition-timing-function: ease-in-out;
 `
 
 export default function Shape({ color, size, radius, top, left }: ShapeProps) {
   const style: React.CSSProperties = {
     width: sizes[size].width,
     height: sizes[size].height,
-    borderRadius: borders[radius],
+    borderRadius: radius,
     top,
-    left
+    left,
+    zIndex: index[size]
   }
 
   return (

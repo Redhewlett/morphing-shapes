@@ -15,7 +15,7 @@ body {
   width: 50vw;
   height: 55vh;
   padding: 1rem;
-  background-color: cornflowerblue;
+  /* background-color: cornflowerblue; */
   display: flex;
 }
 
