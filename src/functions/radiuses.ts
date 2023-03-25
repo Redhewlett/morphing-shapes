@@ -1,9 +1,9 @@
 import { ShapeProps } from "../components/shape/shape"
 import { radiuses, baseSizes, squareSizes } from "../variables/shapesVariables"
-import { changeToSquare, checkIfSquare } from "./squares"
+import { changeDisposition } from "./positions"
+import { changeToSquare, checkIfSquare, changeToRectangle } from "./squares"
 
 export function changeAllRadiusRandomly(shape: ShapeProps): ShapeProps {
-  console.log(checkIfSquare(shape))
   const { radius } = shape
   let newValue: ShapeProps
   let randomIndex = Math.floor(Math.random() * radiuses.length)

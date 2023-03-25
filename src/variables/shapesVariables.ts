@@ -30,3 +30,10 @@ export const squareSizes: ShapeSizes = {
   medium: { width: "62.5%", height: "62.5%" },
   large: { width: "100%", height: "100%" }
 }
+
+export const rectengleSizes: ShapeSizes = {
+  extraSmall: { width: "20%", height: "50%" },
+  small: { width: "25%", height: "60%" },
+  medium: { width: "30%", height: "60%" },
+  large: { width: "50%", height: "100%" }
+}

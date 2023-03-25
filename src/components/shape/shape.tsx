@@ -7,19 +7,19 @@ export interface ShapeProps {
   color: string
   size: { width: string; height: string }
   radius: string
-  top: string
-  left: string
+  position: { top: string; left: string }
 }
 
 const Square = styled.div`
   background-color: ${(props) => props.color};
   position: absolute;
-  transition: top, left, border-radius;
+  transition: all;
   transition-duration: 750ms;
   transition-timing-function: ease-in-out;
 `
 
-export default function Shape({ pos, color, size, radius, top, left }: ShapeProps) {
+export default function Shape({ pos, color, size, radius, position }: ShapeProps) {
+  const { top, left } = position
   const style: React.CSSProperties = {
     width: size.width,
     height: size.height,
