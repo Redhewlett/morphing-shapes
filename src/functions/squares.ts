@@ -3,7 +3,6 @@ import { baseSizes, squareSizes, rectengleSizes } from "../variables/shapesVaria
 
 export function checkIfSquare(shape: ShapeProps): boolean {
   const { size } = shape
-  const sizeName = Object.keys(baseSizes).find((key) => baseSizes[key].width === size.width)
   if (size.width === size.height) {
     return true
   }

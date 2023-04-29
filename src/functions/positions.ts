@@ -1,4 +1,6 @@
 import { ShapeProps } from "../components/shape/shape"
+import { changeToRectangle, changeToSquare } from "./squares"
+import { changeAllRadiusesToMiddle, changeAllRadiusesToZero } from "./radiuses"
 
 interface dispositionObject {
   [key: number]: {
@@ -23,14 +25,17 @@ export const disposition: dispositionObject = {
     left4: { top: "20%", left: "80%" },
     right1: { top: "0%", left: "0%" },
     right2: { top: "10%", left: "50%" },
-    right3: { top: "35%", left: "75%" }
+    right3: { top: "35%", left: "80%" }
   }
 }
 
 export function changeDisposition({ shape, currentDisposition }: { shape: ShapeProps; currentDisposition: number }): ShapeProps {
   const { id } = shape
+  // use rectengleSizes instead of baseSizes
   const newDisposition = currentDisposition === 1 ? 2 : 1
+
+  const newForm = changeToRectangle(shape)
   const newPositions = disposition[newDisposition][id]
-  const newShape = { ...shape, position: newPositions }
+  const newShape = { ...newForm, position: newPositions }
   return newShape
 }

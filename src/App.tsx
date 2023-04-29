@@ -35,15 +35,15 @@ function App() {
     return () => clearTimeout(timeOut)
   }, [groupe1, groupe2])
 
-  useEffect(() => {
-    const timeOut = setTimeout(() => {
-      setCurrentDisposition((prev) => (prev === 1 ? 2 : 1))
-    }, 10000)
-    setGroupe1(groupe1.map((shape) => changeDisposition({ shape, currentDisposition })))
-    setGroupe2(groupe2.map((shape) => changeDisposition({ shape, currentDisposition })))
+  // useEffect(() => {
+  //   const timeOut = setTimeout(() => {
+  //     setCurrentDisposition((prev) => (prev === 1 ? 2 : 1))
+  //   }, 10000)
+  //   setGroupe1(groupe1.map((shape) => changeDisposition({ shape, currentDisposition })))
+  //   setGroupe2(groupe2.map((shape) => changeDisposition({ shape, currentDisposition })))
 
-    return () => clearTimeout(timeOut)
-  }, [currentDisposition])
+  //   return () => clearTimeout(timeOut)
+  // }, [currentDisposition])
 
   return (
     <div className='App'>

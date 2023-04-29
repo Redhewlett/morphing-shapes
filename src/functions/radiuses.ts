@@ -32,3 +32,7 @@ export function changeAllRadiusesToMax(shape: ShapeProps): ShapeProps {
     return { ...square, radius: "50%" }
   }
 }
+
+export function changeAllRadiusesToMiddle(shape: ShapeProps): ShapeProps {
+  return { ...shape, radius: "100px" }
+}
